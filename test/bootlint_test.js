@@ -90,18 +90,6 @@ exports.bootlint = {
     },
     */
     /*
-    'Bootstrap v2': function (test) {
-        test.expect(1);
-        test.deepEqual(lintHtml(utf8Fixture('bs-v2.html')),
-            [
-                'Found one or more uses of outdated Bootstrap v2 `.spanN` grid classes',
-                'Only columns (`.col-*-*`) may be children of `.row`s'
-            ],
-            'should complain when Bootstrap v2 grid classes are present.');
-        test.done();
-    },
-    */
-    /*
     'rows outside containers': function (test) {
         test.expect(5);
         test.deepEqual(lintHtml(utf8Fixture('containers/fixed.html')),
