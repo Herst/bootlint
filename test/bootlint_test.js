@@ -57,15 +57,6 @@ exports.bootlint = {
         test.done();
     },
     /*
-    'disabling lint checks': function (test) {
-        test.expect(1);
-        test.deepEqual(lintHtml(utf8Fixture('bs-v2.html'), ['E002', 'E013']),
-            [],
-            'should complain when Bootstrap v2 grid classes are present.');
-        test.done();
-    },
-    */
-    /*
     'UTF-8 charset meta tag': function (test) {
         test.expect(4);
         test.deepEqual(lintHtml(utf8Fixture('charset/utf8.html')),
@@ -95,18 +86,6 @@ exports.bootlint = {
         test.deepEqual(lintHtml(utf8Fixture('x-ua-compatible/missing.html')),
             ['`<head>` is missing X-UA-Compatible `<meta>` tag that disables old IE compatibility modes'],
             'should complain when X-UA-Compatible <meta> tag is missing.');
-        test.done();
-    },
-    */
-    /*
-    'Bootstrap v2': function (test) {
-        test.expect(1);
-        test.deepEqual(lintHtml(utf8Fixture('bs-v2.html')),
-            [
-                'Found one or more uses of outdated Bootstrap v2 `.spanN` grid classes',
-                'Only columns (`.col-*-*`) may be children of `.row`s'
-            ],
-            'should complain when Bootstrap v2 grid classes are present.');
         test.done();
     },
     */
@@ -463,20 +442,6 @@ exports.bootlint = {
     },
     */
     /*
-    '.table-responsive on the table itself': function (test) {
-        test.expect(2);
-        test.deepEqual(lintHtml(utf8Fixture('table/responsive-valid.html')),
-            [],
-            'should not complain when .table-responsive is used on the table\'s wrapper div.'
-        );
-        test.deepEqual(lintHtml(utf8Fixture('table/responsive-incorrect.html')),
-            ['`.table-responsive` is supposed to be used on the table\'s parent wrapper `<div>`, not on the table itself'],
-            'should complain when .table-responsive is used on the table itself.'
-        );
-        test.done();
-    },
-    */
-    /*
     'redundant grid column classes': function (test) {
         test.expect(2);
         test.deepEqual(lintHtml(utf8Fixture('grid/cols-not-redundant.html')),
@@ -562,38 +527,6 @@ exports.bootlint = {
     },
     */
     /*
-    'Glyphicons on non-empty elements': function (test) {
-        test.expect(3);
-        test.deepEqual(lintHtml(utf8Fixture('glyphicons/valid.html')),
-            [],
-            'should not complain when the .glyphicon element has no text content or children.'
-        );
-        test.deepEqual(lintHtml(utf8Fixture('glyphicons/on-elem-with-text.html')),
-            ['Glyphicon classes must only be used on elements that contain no text content and have no child elements.'],
-            'should complain when Glyphicon is used on an element with text content.'
-        );
-        test.deepEqual(lintHtml(utf8Fixture('glyphicons/on-elem-with-child.html')),
-            ['Glyphicon classes must only be used on elements that contain no text content and have no child elements.'],
-            'should complain when Glyphicon is used on an element with child element(s).'
-        );
-        test.done();
-    },
-    */
-    /*
-    'Glyphicons missing the .glyphicon class': function (test) {
-        test.expect(2);
-        test.deepEqual(lintHtml(utf8Fixture('glyphicons/valid.html')),
-            [],
-            'should not complain when Glyphicon is used correctly.'
-        );
-        test.deepEqual(lintHtml(utf8Fixture('glyphicons/missing-glyphicon-class.html')),
-            ['Found elements with a `.glyphicon-*` class that were missing the additional required `.glyphicon` class.'],
-            'should complain when .glyphicon-* class is used without the .glyphicon class.'
-        );
-        test.done();
-    },
-    */
-    /*
     'modal structure': function (test) {
         test.expect(7);
         test.deepEqual(lintHtml(utf8Fixture('modal/valid.html')),
@@ -637,46 +570,6 @@ exports.bootlint = {
         test.deepEqual(lintHtml(utf8Fixture('form/form-horizontal-group.html')),
             ['Neither `.form-inline` nor `.form-horizontal` should be used directly on a `.form-group`. Instead, nest the `.form-group` within the `.form-inline` or `.form-horizontal`'],
             'should complain about form-group having .form-horizontal'
-        );
-        test.done();
-    },
-    */
-    /*
-    'incorrect alerts with dismiss/close buttons': function (test) {
-        test.expect(5);
-        test.deepEqual(lintHtml(utf8Fixture('alert-dismiss-close/valid.html')),
-            [],
-            'should not complain when dismissible alert markup structure is correct.'
-        );
-        test.deepEqual(lintHtml(utf8Fixture('alert-dismiss-close/close-preceded-by-nothing.html')),
-            [],
-            'should not complain when close button is preceded by nothing.'
-        );
-        test.deepEqual(lintHtml(utf8Fixture('alert-dismiss-close/missing-alert-dismissible.html')),
-            ['`.alert` with dismiss button must have class `.alert-dismissible`'],
-            'should complain when alert with dismiss button is missing .alert-dismissible class.'
-        );
-        test.deepEqual(lintHtml(utf8Fixture('alert-dismiss-close/close-preceded-by-text.html')),
-            ['`.close` button for `.alert` must be the first element in the `.alert`'],
-            'should complain when alert close button is not first child in alert.'
-        );
-        test.deepEqual(lintHtml(utf8Fixture('alert-dismiss-close/close-preceded-by-elem.html')),
-            ['`.close` button for `.alert` must be the first element in the `.alert`'],
-            'should complain when alert close button is not first child in alert.'
-        );
-        test.done();
-    },
-    */
-    /*
-    'pull classes inside media': function (test) {
-        test.expect(2);
-        test.deepEqual(lintHtml(utf8Fixture('media/deprecated-pull-classes.html')),
-            ['Using `.pull-left` or `.pull-right` as part of the media object component is deprecated as of Bootstrap v3.3.0. Use `.media-left` or `.media-right` instead.'],
-            'should complain about .pull-* classes in .media'
-        );
-        test.deepEqual(lintHtml(utf8Fixture('media/media-classes.html')),
-            [],
-            'should not complain about .media-left or .media-right classes.'
         );
         test.done();
     },
@@ -777,20 +670,6 @@ exports.bootlint = {
         test.deepEqual(lintHtml(utf8Fixture('navbar/navbar-left-right-valid.html')),
             [],
             'should not complain about .navbar-left or .navbar-right inside of .navbar.'
-        );
-        test.done();
-    },
-    */
-    /*
-    'modal with .hide class': function (test) {
-        test.expect(2);
-        test.deepEqual(lintHtml(utf8Fixture('modal/with-hide.html')),
-            ['`.hide` should not be used on `.modal` in Bootstrap v3.'],
-            'should complain about a modal with the .hide class.'
-        );
-        test.deepEqual(lintHtml(utf8Fixture('modal/valid.html')),
-            [],
-            'should not complain about a modal without the .hide class.'
         );
         test.done();
     },
