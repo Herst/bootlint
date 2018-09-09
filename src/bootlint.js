@@ -325,14 +325,6 @@ var LocationIndex = _location.LocationIndex;
     });
     */
     /*
-    addLinter('W010', function lintMediaPulls($, reporter) {
-        var mediaPulls = $('.media>.pull-left, .media>.pull-right');
-        if (mediaPulls.length) {
-            reporter('Using `.pull-left` or `.pull-right` as part of the media object component is deprecated as of Bootstrap v3.3.0. Use `.media-left` or `.media-right` instead.');
-        }
-    });
-    */
-    /*
     addLinter('W012', function lintNavbarContainers($, reporter) {
         var navBars = $('.navbar');
         var containers = [

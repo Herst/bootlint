@@ -587,20 +587,6 @@ exports.bootlint = {
     },
     */
     /*
-    'pull classes inside media': function (test) {
-        test.expect(2);
-        test.deepEqual(lintHtml(utf8Fixture('media/deprecated-pull-classes.html')),
-            ['Using `.pull-left` or `.pull-right` as part of the media object component is deprecated as of Bootstrap v3.3.0. Use `.media-left` or `.media-right` instead.'],
-            'should complain about .pull-* classes in .media'
-        );
-        test.deepEqual(lintHtml(utf8Fixture('media/media-classes.html')),
-            [],
-            'should not complain about .media-left or .media-right classes.'
-        );
-        test.done();
-    },
-    */
-    /*
     'invalid nonexistent .col-*-0 classes': function (test) {
         test.expect(4);
         test.deepEqual(lintHtml(utf8Fixture('grid/col-xs-0.html')),
@@ -696,20 +682,6 @@ exports.bootlint = {
         test.deepEqual(lintHtml(utf8Fixture('navbar/navbar-left-right-valid.html')),
             [],
             'should not complain about .navbar-left or .navbar-right inside of .navbar.'
-        );
-        test.done();
-    },
-    */
-    /*
-    'modal with .hide class': function (test) {
-        test.expect(2);
-        test.deepEqual(lintHtml(utf8Fixture('modal/with-hide.html')),
-            ['`.hide` should not be used on `.modal` in Bootstrap v3.'],
-            'should complain about a modal with the .hide class.'
-        );
-        test.deepEqual(lintHtml(utf8Fixture('modal/valid.html')),
-            [],
-            'should not complain about a modal without the .hide class.'
         );
         test.done();
     },
