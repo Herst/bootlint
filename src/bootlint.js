@@ -415,19 +415,6 @@ var LocationIndex = _location.LocationIndex;
 
     })());
     /*
-    addLinter('E002', function lintBootstrapv2($, reporter) {
-        var columnClasses = [];
-        for (var n = 1; n <= 12; n++) {
-            columnClasses.push('.span' + n);
-        }
-        var selector = columnClasses.join(',');
-        var spanNs = $(selector);
-        if (spanNs.length) {
-            reporter('Found one or more uses of outdated Bootstrap v2 `.spanN` grid classes', spanNs);
-        }
-    });
-    */
-    /*
     addLinter('E003', function lintContainers($, reporter) {
         var notAnyColClass = COL_CLASSES.map(function (colClass) {
             return ':not(' + colClass + ')';
@@ -805,20 +792,6 @@ var LocationIndex = _location.LocationIndex;
         var alertsMissingDismissible = $('.alert:not(.alert-dismissible):has([data-dismiss="alert"])');
         if (alertsMissingDismissible.length) {
             reporter('`.alert` with dismiss button must have class `.alert-dismissible`', alertsMissingDismissible);
-        }
-    });
-    */
-    /*
-    addLinter('E034', function lintAlertDismissStructure($, reporter) {
-        var nonFirstChildCloses = $('.alert>.close:not(:first-child)');
-        var closesPrecededByText = $('.alert>.close').filter(function () {
-            var firstNode = $(this).parent().contents().eq(0);
-            var firstNodeIsText = IN_NODE_JS ? firstNode[0].type === 'text' : firstNode[0].nodeType === 3;
-            return Boolean(firstNodeIsText && firstNode.text().trim());
-        });
-        var problematicCloses = nonFirstChildCloses.add(closesPrecededByText);
-        if (problematicCloses.length) {
-            reporter('`.close` button for `.alert` must be the first element in the `.alert`', problematicCloses);
         }
     });
     */

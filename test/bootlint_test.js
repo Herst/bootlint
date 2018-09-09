@@ -57,15 +57,6 @@ exports.bootlint = {
         test.done();
     },
     /*
-    'disabling lint checks': function (test) {
-        test.expect(1);
-        test.deepEqual(lintHtml(utf8Fixture('bs-v2.html'), ['E002', 'E013']),
-            [],
-            'should complain when Bootstrap v2 grid classes are present.');
-        test.done();
-    },
-    */
-    /*
     'UTF-8 charset meta tag': function (test) {
         test.expect(4);
         test.deepEqual(lintHtml(utf8Fixture('charset/utf8.html')),
@@ -562,38 +553,6 @@ exports.bootlint = {
     },
     */
     /*
-    'Glyphicons on non-empty elements': function (test) {
-        test.expect(3);
-        test.deepEqual(lintHtml(utf8Fixture('glyphicons/valid.html')),
-            [],
-            'should not complain when the .glyphicon element has no text content or children.'
-        );
-        test.deepEqual(lintHtml(utf8Fixture('glyphicons/on-elem-with-text.html')),
-            ['Glyphicon classes must only be used on elements that contain no text content and have no child elements.'],
-            'should complain when Glyphicon is used on an element with text content.'
-        );
-        test.deepEqual(lintHtml(utf8Fixture('glyphicons/on-elem-with-child.html')),
-            ['Glyphicon classes must only be used on elements that contain no text content and have no child elements.'],
-            'should complain when Glyphicon is used on an element with child element(s).'
-        );
-        test.done();
-    },
-    */
-    /*
-    'Glyphicons missing the .glyphicon class': function (test) {
-        test.expect(2);
-        test.deepEqual(lintHtml(utf8Fixture('glyphicons/valid.html')),
-            [],
-            'should not complain when Glyphicon is used correctly.'
-        );
-        test.deepEqual(lintHtml(utf8Fixture('glyphicons/missing-glyphicon-class.html')),
-            ['Found elements with a `.glyphicon-*` class that were missing the additional required `.glyphicon` class.'],
-            'should complain when .glyphicon-* class is used without the .glyphicon class.'
-        );
-        test.done();
-    },
-    */
-    /*
     'modal structure': function (test) {
         test.expect(7);
         test.deepEqual(lintHtml(utf8Fixture('modal/valid.html')),
@@ -637,32 +596,6 @@ exports.bootlint = {
         test.deepEqual(lintHtml(utf8Fixture('form/form-horizontal-group.html')),
             ['Neither `.form-inline` nor `.form-horizontal` should be used directly on a `.form-group`. Instead, nest the `.form-group` within the `.form-inline` or `.form-horizontal`'],
             'should complain about form-group having .form-horizontal'
-        );
-        test.done();
-    },
-    */
-    /*
-    'incorrect alerts with dismiss/close buttons': function (test) {
-        test.expect(5);
-        test.deepEqual(lintHtml(utf8Fixture('alert-dismiss-close/valid.html')),
-            [],
-            'should not complain when dismissible alert markup structure is correct.'
-        );
-        test.deepEqual(lintHtml(utf8Fixture('alert-dismiss-close/close-preceded-by-nothing.html')),
-            [],
-            'should not complain when close button is preceded by nothing.'
-        );
-        test.deepEqual(lintHtml(utf8Fixture('alert-dismiss-close/missing-alert-dismissible.html')),
-            ['`.alert` with dismiss button must have class `.alert-dismissible`'],
-            'should complain when alert with dismiss button is missing .alert-dismissible class.'
-        );
-        test.deepEqual(lintHtml(utf8Fixture('alert-dismiss-close/close-preceded-by-text.html')),
-            ['`.close` button for `.alert` must be the first element in the `.alert`'],
-            'should complain when alert close button is not first child in alert.'
-        );
-        test.deepEqual(lintHtml(utf8Fixture('alert-dismiss-close/close-preceded-by-elem.html')),
-            ['`.close` button for `.alert` must be the first element in the `.alert`'],
-            'should complain when alert close button is not first child in alert.'
         );
         test.done();
     },
